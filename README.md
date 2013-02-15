@@ -79,24 +79,24 @@ using the same entityID.
 
 Here is an example node configuration:
 
-{
-  "name": "shibboleth-sp",
-  ...
-  "run_list": [
-    ...
-    "recipe[shibboleth-sp]"
-  ],
-  "override_attributes": {
-    ...
-    "shibboleth_sp": {
-      "entityid_domain": "ucsf.edu",
-      "local_metadata": "idp-metadata.xml",
-      "idp_entityid": "urn:mace:incommon:ucsf.edu",
-      "protected_paths": [ "/secure/" ],
-      "local_attribute_map": true
+    {
+      "name": "shibboleth-sp",
+      ...
+      "run_list": [
+        ...
+        "recipe[shibboleth-sp]"
+      ],
+      "override_attributes": {
+        ...
+        "shibboleth_sp": {
+          "entityid_domain": "ucsf.edu",
+          "local_metadata": "idp-metadata.xml",
+          "idp_entityid": "urn:mace:incommon:ucsf.edu",
+          "protected_paths": [ "/secure/" ],
+          "local_attribute_map": true
+        }
+      }
     }
-  }
-}
 
 License and Author
 ==================
