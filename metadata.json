@@ -1,0 +1,33 @@
+{
+  "name": "shibboleth_sp",
+  "description": "Install and configure Shibboleth SP",
+  "long_description": "",
+  "maintainer": "Elliot Kendall",
+  "maintainer_email": "elliot.kendall@ucsf.edu",
+  "license": "See License.md",
+  "platforms": {
+    "centos": [
+
+    ]
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "shibboleth_sp": "Install and configure Shibboleth SP"
+  },
+  "version": "0.1.0"
+}
