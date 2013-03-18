@@ -4,7 +4,7 @@
   "long_description": "",
   "maintainer": "Elliot Kendall",
   "maintainer_email": "elliot.kendall@ucsf.edu",
-  "license": "See License.md",
+  "license": "BSD",
   "platforms": {
     "centos": [
 
@@ -29,5 +29,5 @@
   "recipes": {
     "shibboleth_sp": "Install and configure Shibboleth SP"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
