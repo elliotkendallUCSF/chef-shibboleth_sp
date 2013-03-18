@@ -1,5 +1,6 @@
 template "/etc/yum.repos.d/shibboleth.repo" do
   mode "0644"
+  source "shibboleth.repo.erb"
   # First character of version number - kind of a hack
   variables(
     :ver => node["platform_version"].to_s()[0]
