@@ -41,7 +41,15 @@ files/default/.
 * `node["shibboleth_sp"]["protected_paths"]` - A list of absolute paths on
 the Apache server which should require Shibboleth authentication, each of
 which should end with a slash.  Set this to `/` if you want the entire web
-server protected.  Optional authentication is not yet supported.
+server protected.
+
+* `node["shibboleth_sp"]["optional_paths"]` - A list of absolute paths on
+the Apache server which should support but not require Shibboleth
+authentication, each of which should end with a slash.  In other words,
+these locations will get environment variables for attributes from already
+existing Shibboleth sessions, but not force people to log in if they have no
+existing session.  Set this to `/` if you want the entire web server to
+support Shibboleth auth.
 
 * `node["shibboleth_sp"]["cert_file"]` - The name of a PEM certificate file
 to be used by the SP. The file should be placed in files/default/.  If this
@@ -93,6 +101,7 @@ Here is an example node configuration:
           "local_metadata": "idp-metadata.xml",
           "idp_entityid": "urn:mace:incommon:ucsf.edu",
           "protected_paths": [ "/secure/" ],
+          "optional_paths": [ "/" ],
           "local_attribute_map": true
         }
       }
