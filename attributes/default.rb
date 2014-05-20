@@ -14,3 +14,4 @@ default["shibboleth_sp"]["cert_file"] = ''
 default["shibboleth_sp"]["key_file"] = ''
 default["shibboleth_sp"]["user"] = 'shibd'
 default["shibboleth_sp"]["local_attribute_map"] = false
+default["shibboleth_sp"]["remote_user_attributes"] = "eppn eduPersonPrincipalName persistent-id targeted-id"

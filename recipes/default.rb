@@ -17,11 +17,11 @@ else
   entityid = 'https://' + node.name + '.' + node['shibboleth_sp']['entityid_domain']
 end
 
-
 template "/etc/shibboleth/shibboleth2.xml" do
   mode "0644"
   variables(
-    :entityid => entityid
+    :entityid => entityid,
+    :remote_user_attributes => node['shibboleth_sp']['remote_user_attributes']
   )
   notifies :restart, "service[shibd]"
 end

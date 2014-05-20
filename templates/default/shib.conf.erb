@@ -1,11 +1,25 @@
 LoadModule mod_shib /usr/lib64/shibboleth/mod_shib_22.so
 
+<Location /Shibboleth.sso>
+  Satisfy Any
+  Allow from all
+</Location>
+
 <IfModule mod_alias.c>
   <Location /shibboleth-sp>
+    Satisfy Any
     Allow from all
   </Location>
   Alias /shibboleth-sp/main.css /usr/share/shibboleth/main.css
 </IfModule>
+
+<% node['shibboleth_sp']['optional_paths'].each do |path| -%>
+<Location <%= path %>>
+  AuthType shibboleth
+  ShibRequestSetting requireSession 0
+  require shibboleth
+</Location>
+<% end -%>
 
 <% node['shibboleth_sp']['protected_paths'].each do |path| -%>
 <Location <%= path %>>
@@ -15,10 +29,3 @@ LoadModule mod_shib /usr/lib64/shibboleth/mod_shib_22.so
 </Location>
 <% end -%>
 
-<% node['shibboleth_sp']['optional_paths'].each do |path| -%>
-<Location <%= path %>>
-  AuthType shibboleth
-  ShibRequestSetting requireSession 0
-  require shibboleth
-</Location>
-<% end -%>
