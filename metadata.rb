@@ -1,3 +1,4 @@
+name              "shibboleth_sp"
 maintainer        "Elliot Kendall"
 maintainer_email  "elliot.kendall@ucsf.edu"
 license           "Apache 2.0"
